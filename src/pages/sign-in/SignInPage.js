@@ -1,54 +1,86 @@
 import logo from "../../assets/logo.png";
-import { Button } from "@chakra-ui/react";
+import { Button, Divider } from "@chakra-ui/react";
 import { Input } from "@chakra-ui/react";
-import { VStack } from "@chakra-ui/react";
 import { Text } from "@chakra-ui/react";
 import { Flex } from "@chakra-ui/react";
 import { Image } from "@chakra-ui/react";
-import { StackDivider } from "@chakra-ui/react";
 import {useNavigate} from 'react-router-dom'
-import { goToSignUpPage } from "../../routes/coordinator";
+import { goToFeedPage, goToSignUpPage } from "../../routes/coordinator";
+import { useForm } from "../../hooks/useForm";
+import { signIn } from "../../apiReq/apiReq";
+import { useState } from "react";
 
 export const SignInPage = () => {
+
+    const [errorMessage, setErrorMessage] = useState("");
+
+    const [form, onChangeInputs, clearInputs] = useForm(
+      {
+        email: "",
+        password: ""
+      }
+    )
     const navigator = useNavigate()
+
+    const onSubmit = async (e) => {
+      e.preventDefault();
+      try {
+        const response = await signIn({
+          email: form.email,
+          password: form.password
+        })
+        localStorage.setItem("tokenLabeddit", response.token)
+        console.log(response)
+        goToFeedPage(navigator)
+      } catch (error) {
+        setErrorMessage(error.response.data);
+      }
+    }
+
   return (
     <Flex
       direction="column"
-      gap="48px"
-      justify="center"
+      justify="space-around"
       height="100vh"
       padding='28px'
     >
-      <Flex direction="column" gap="100px">
         <Flex direction="column" align="center">
           <Image boxSize="84px" src={logo} alt="Logo" />
           <Text color='gray.900' fontSize='36px' fontWeight='700'>Labeddit</Text>
           <Text>O projeto de rede social da Labenu</Text>
         </Flex>
-        <Flex direction='column' gap='6px'>
+        <form onSubmit={onSubmit}>
+          <Flex direction='column' gap='6px'>
+          {errorMessage ? (
+                <Text color="red">{errorMessage}</Text>
+              ) : undefined}
           <Input
-            fontSize="16px"
-            height="60px"
-            placeholder="E-mail"
-            size="md"
-            _placeholder={{ color: "inherit", fontSize: "16px" }}
-          />
-          <Input
-            fontSize="16px"
-            height="60px"
-            placeholder="Senha"
-            size="md"
-            _placeholder={{ color: "inherit", fontSize: "16px" }}
-          ></Input>
-        </Flex>
+              value={form.email}
+              type="text"
+              name="email"
+              onChange={onChangeInputs}
+              fontSize="16px"
+              height="60px"
+              placeholder="E-mail"
+              size="md"
+              _placeholder={{ color: "inherit", fontSize: "16px" }}
+            ></Input>
+            <Input
+              value={form.password}
+              type="password"
+              name="password"
+              onChange={onChangeInputs}
+              fontSize="16px"
+              height="60px"
+              placeholder="Senha"
+              size="md"
+              _placeholder={{ color: "inherit", fontSize: "16px" }}
+            />
+          <Button type="submit" variant="gradient" margin='48px 0 12px 0'>Continuar</Button>
+          <Divider borderWidth="0.6px" borderColor="orange.500" orientation="horizontal" />
+          <Button variant="withoutbg" marginTop='12px' onClick={()=>goToSignUpPage(navigator)} >Crie uma conta!</Button>
+          </Flex>
+        </form>
       </Flex>
-      <Flex direction='column'>
-        <VStack gap="12px" divider={<StackDivider borderColor="orange.500" />}>
-          <Button variant="gradient">Continuar</Button>
-          <Button variant="withoutbg" onClick={()=>goToSignUpPage(navigator)} >Crie uma conta!</Button>
-        </VStack>
-      </Flex>
-
-    </Flex>
   );
 };

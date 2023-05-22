@@ -7,6 +7,10 @@ import { goToFeedPage } from "../../routes/coordinator";
 
 export const Header = ({ currentPage }) => {
     const navigator = useNavigate()
+    const logout = () => {
+      localStorage.removeItem('tokenLabeddit');
+      goToSignInPage(navigator)
+    }
   return (
     <HeaderStyled>
       <LogoHeader src={logo} />
@@ -14,7 +18,7 @@ export const Header = ({ currentPage }) => {
       {currentPage === "signup" ? (
         <LinkText onClick={()=>goToSignInPage(navigator)}>Entrar</LinkText>
       ) : (
-        <LinkText>Logout</LinkText>
+        <LinkText onClick={logout}>Logout</LinkText>
       )}
     </HeaderStyled>
   );
