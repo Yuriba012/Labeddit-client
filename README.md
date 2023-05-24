@@ -13,7 +13,7 @@
 <img style="text-align:center;width:120px" src="./src/assets/logo.png" alt="Labeddit" style="width: 220px; border-radius: 110px;"/>
 </div>
 <div style="text-align:justify; margin: 20px 0">
-Este repositório contém o código referente ao Front-end de um projeto Full Stack chamado Labeddit.
+Este repositório contém o código referente ao Front-end de um projeto Full Stack chamado Labeddit. A interface foi desenvolvida principalmente para mobile, podendo ser utilizada adequadamente também em desktop.
 O projeto consiste em uma rede social com alguns detalhes que lembram a Reddit. Nessa aplicação, você pode criar o seu usuário ou efetuar o login caso já possua uma conta. Entrando na página principal, terá um feed com as publicações de todos os usuários da rede ordenadas pelo maior número de likes. Você pode criar sua publicação e interagir com as publicações de outros usuários efetuando likes ou dislikes. Você também pode comentar as publicações de outros usuários e interagir com outros comentários.
 </div>
 
@@ -71,6 +71,7 @@ $ npm run start
 2. [React Router](https://reactrouter.com/en/main)
 3. [Axios](https://axios-http.com/ptbr/docs/intro)
 4. [Styled-Components](https://styled-components.com/)
+5. [Chakra UI](https://styled-components.com/)
 
 ## Autor
 
