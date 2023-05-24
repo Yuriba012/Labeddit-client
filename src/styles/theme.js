@@ -11,7 +11,7 @@ export const theme = extendTheme({
                     fontWeight: 'bold',
                     borderRadius: '27px',
                     height: '51px',
-                    width: '100%'
+                    width: '100%'   
                 },
                 withoutbg:{
                     bg: 'white',

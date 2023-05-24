@@ -19,9 +19,10 @@ export const OwnerName = styled.p`
     font-size: 12px;
     color: ${theme.colors.gray['700']};
 `
-export const PostContent = styled.h3`
+export const PostContent = styled.p`
     font-size: 18px;
     color: ${theme.colors.gray['900']};
+    word-break: break-word;
 `
 export const ReactionsDiv = styled.div`
     display: flex;
@@ -43,6 +44,11 @@ export const LikesDiv = styled.div`
 export const ReactionIcon = styled.img`
     height: 18px;
     cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.5s ease-out;
+    :active{
+        background-color: ${theme.colors.orange['500']};
+    }
 `
 
 export const LikesNumber = styled.p`
