@@ -1,70 +1,81 @@
-# Getting Started with Create React App
+# Projeto Labeddit Front-end
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Link da aplicação (deploy):
+[Labeddit](https://labeddit-client-side-media.surge.sh/)
 
-## Available Scripts
+### Link do repositório Back-end deste projeto:
+[Labeddit Back-end](https://github.com/Yuriba012/Labeddit-backend)
 
-In the project directory, you can run:
+### Acesse a documentação da API através do link: 
+[Labeddit API Documentation](https://documenter.getpostman.com/view/25826645/2s93m611yx)
 
-### `npm start`
+<div style="display: flex;justify-content:center;">
+<img style="text-align:center;width:120px" src="./src/assets/logo.png" alt="Labeddit" style="width: 220px; border-radius: 110px;"/>
+</div>
+<div style="text-align:justify; margin: 20px 0">
+Este repositório contém o código referente ao Front-end de um projeto Full Stack chamado Labeddit.
+O projeto consiste em uma rede social com alguns detalhes que lembram a Reddit. Nessa aplicação, você pode criar o seu usuário ou efetuar o login caso já possua uma conta. Entrando na página principal, terá um feed com as publicações de todos os usuários da rede ordenadas pelo maior número de likes. Você pode criar sua publicação e interagir com as publicações de outros usuários efetuando likes ou dislikes. Você também pode comentar as publicações de outros usuários e interagir com outros comentários.
+</div>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Ìndice
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- <a href="#funcionalidades">Funcionalidades do Projeto</a>
+- <a href="#demonstracao">Demonstração</a>
+- <a href="#rodar">Como rodar este projeto?</a>
+- <a href="#tecnologias">Tecnologias Utilizadas</a>
+- <a href="#autor">Autor</a>
 
-### `npm test`
+## Funcionalidades do projeto
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- [x] Login
+- [x] SignUp
+- [x] Interação com publicações por meio likes/dislikes
+- [x] Interação com publicações por meio comentários
+- [x] Criar publicação
+- [x] Criar comentário
+- [x] Visualizar todas as publicações dos usuários
+- [x] Visualizar todos os comentários de uma publicação
 
-### `npm run build`
+## Layout
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![SignIn Page](./src/assets/signinPage.jpg)
+![SignUp Page](./src/assets/signupPage.jpg)
+![Feed Page](./src/assets/feedPage.jpg)
+![Post Page](./src/assets/postPage.jpg)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Demonstração
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+[Demonstracao / Deploy](https://labeddit-client-side-media.surge.sh/)
 
-### `npm run eject`
+## Como rodar este projeto?
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```bash
+# Clone este repositório
+$ git clone https://github.com/Yuriba012/Labeddit-client
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# Acesse a pasta do projeto no seu terminal
+$ cd Labeddit-client
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+# Instale as dependências do React e bibliotecas
+$ npm install
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+# Execute a aplicação
+$ npm run start
 
-## Learn More
+# A aplicação será iniciada na porta 3000, acesse no seu navegador pelo endereço: http://localhost:3000
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Tecnologias utilizadas
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. [React JS](https://pt-br.reactjs.org/)
+2. [React Router](https://reactrouter.com/en/main)
+3. [Axios](https://axios-http.com/ptbr/docs/intro)
+4. [Styled-Components](https://styled-components.com/)
 
-### Code Splitting
+## Autor
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+<div style="display: flex;justify-content:center;">
+<img src="https://media.licdn.com/dms/image/D4D03AQGRDaGGibo_9w/profile-displayphoto-shrink_800_800/0/1678072127127?e=1690416000&v=beta&t=YzhLo3Gs9nYxZHqp_nk7WdOBRqNE7B9RJ5rP7oAfyCI" alt="Yuri Moralles" style="width: 220px; border-radius: 110px;"/>
+</div>
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[Linkedin](https://www.linkedin.com/in/yuri-moralles-ab752291/)
