@@ -29,6 +29,7 @@ export const SignInPage = () => {
         password: form.password,
       });
       localStorage.setItem("tokenLabeddit", response.token);
+      localStorage.setItem("userName", response.user.name)
       setIsLoading(false)
       goToFeedPage(navigator);
     } catch (error) {

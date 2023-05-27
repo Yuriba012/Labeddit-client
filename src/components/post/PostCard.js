@@ -5,10 +5,15 @@ import {
   LikesNumber,
   OwnerName,
   PostContent,
-  ReactionIcon,
+  LikeIcon,
+  DislikeIcon,
   ReactionsDiv,
+  CommentIcon,
 } from "./style";
 import likeIcon from "../../assets/likeIcon.png";
+import likeIconRed from "../../assets/likeIconRed.png";
+import likeIconGreen from "../../assets/likeIconGreen.png";
+
 import dislikeIcon from "../../assets/dislikeIcon.png";
 import commentIcon from "../../assets/commentIcon.png";
 import { useNavigate } from "react-router-dom";
@@ -35,7 +40,7 @@ import { useState } from "react";
 import { useForm } from "../../hooks/useForm";
 
 export const PostCard = ({ post, like, deleteCard, editContent }) => {
-  const { id, creator, content, likes, dislikes, comments } = post;
+  const { id, creator, content, likes, dislikes, comments, reaction } = post;
   const [editing, setEditing] = useState(false);
   const sendEdit = (e) =>{
     e.preventDefault();
@@ -97,19 +102,32 @@ export const PostCard = ({ post, like, deleteCard, editContent }) => {
 
       <ReactionsDiv>
         <LikesDiv>
-          <ReactionIcon
+          {reaction === true?
+          <LikeIcon
+            onClick={() => like(isComment, id, true)}
+            src={likeIconGreen}
+            reaction={reaction}
+          />:
+          <LikeIcon
             onClick={() => like(isComment, id, true)}
             src={likeIcon}
-          />
+            reaction={reaction}
+          />}
           <LikesNumber>{likes - dislikes}</LikesNumber>
-          <ReactionIcon
+          {reaction === false?          
+           <DislikeIcon
+            onClick={() => like(isComment, id, false)}
+            src={likeIconRed}
+          />:
+          <DislikeIcon
             onClick={() => like(isComment, id, false)}
             src={dislikeIcon}
-          />
+            reaction={reaction}
+          />}
         </LikesDiv>
         {!isComment ? (
           <LikesDiv onClick={() => goToPostPage(navigator, id)}>
-            <ReactionIcon src={commentIcon} />
+            <CommentIcon src={commentIcon} />
             <CommentsNumber>{comments}</CommentsNumber>
           </LikesDiv>
         ) : undefined}

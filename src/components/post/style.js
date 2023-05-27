@@ -41,7 +41,25 @@ export const LikesDiv = styled.div`
     align-items: center;
 `
 
-export const ReactionIcon = styled.img`
+export const LikeIcon = styled.img`
+    height: 18px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.5s ease-out;
+    :active{
+        background-color: ${theme.colors.orange['500']};
+    }
+`
+export const DislikeIcon = styled.img`
+    height: 18px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.5s ease-out;
+    :active{
+        background-color: ${theme.colors.orange['500']};
+    }
+`
+export const CommentIcon = styled.img`
     height: 18px;
     cursor: pointer;
     border-radius: 8px;

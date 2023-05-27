@@ -31,3 +31,11 @@ left: 20px;
 height:24px;
 cursor: pointer;
 `
+
+export const UserName = styled.p`
+color: ${theme.colors.gray['700']};
+position: absolute;
+left: ${({page})=> page==='post'?'64px':'20px'};
+font-size: 12px;
+font-weight: bold;
+`
