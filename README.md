@@ -79,4 +79,5 @@ $ npm run start
 <img src="https://media.licdn.com/dms/image/D4D03AQGRDaGGibo_9w/profile-displayphoto-shrink_800_800/0/1678072127127?e=1690416000&v=beta&t=YzhLo3Gs9nYxZHqp_nk7WdOBRqNE7B9RJ5rP7oAfyCI" alt="Yuri Moralles" style="width: 220px; border-radius: 110px;"/>
 </div>
 
+## Yuri Barañano S. Moralles
 [Linkedin](https://www.linkedin.com/in/yuri-moralles-ab752291/)

@@ -108,14 +108,11 @@ const handleSearch = (e) => {
 
   useEffect(() => {
     requestPost(localStorage.getItem("tokenLabeddit"), id);
-  }, [message ,id, commentsList]);
+  }, [message]);
 
   useEffect(() => {
     requestComments(localStorage.getItem("tokenLabeddit"), id);
-  }, [message, id]);
-
-
-
+  }, [message]);
 
   const currentPage = "post";
 
